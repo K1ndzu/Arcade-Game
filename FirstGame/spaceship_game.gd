@@ -5,10 +5,6 @@ var score : int = 0
 var Enemy = preload("res://FirstGame/enemy_body.tscn")
 
 
-func updateScore:
-	label.text = score
-
-
 func _on_timer_timeout() -> void:
 	var enemy = Enemy.instantiate()
 	var randomNumber = randi_range(278,854)
