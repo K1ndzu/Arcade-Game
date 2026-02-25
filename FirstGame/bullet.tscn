@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6sbcw3gtq5o4"]
+
+[ext_resource type="Script" uid="uid://ct31u8ssokabm" path="res://FirstGame/bullet.gd" id="1_8yx8c"]
+[ext_resource type="Texture2D" uid="uid://dx5oh5idsl50m" path="res://Imagens/Mini Pixel Pack 3/Projectiles/Player_beam (16 x 16).png" id="2_jvr4r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xw264"]
+radius = 25.005
+
+[node name="Bullet" type="CharacterBody2D" groups=["Bullet"]]
+script = ExtResource("1_8yx8c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_jvr4r")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Bullet"]]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_xw264")
+one_way_collision = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
