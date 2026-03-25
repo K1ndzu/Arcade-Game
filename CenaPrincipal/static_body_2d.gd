@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		text = "Obrigado, estava com uma mega tosse aperte E novamente"
 		label.text = "Obrigado, estava com uma mega tosse aperte E novamente"
 		if(Input.is_action_just_pressed("interact") && count == 2):
-			get_tree().change_scene_to_file("res://FirstGame/Spaceship Game.tscn")
+			get_tree().change_scene_to_file("res://SpaceGame/Principais/Spaceship Game.tscn")
 		
 		
 

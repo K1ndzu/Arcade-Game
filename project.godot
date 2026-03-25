@@ -15,10 +15,6 @@ run/main_scene="uid://576oa3dfnwtn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://d3dpaijj7cu27"
 
-[autoload]
-
-GlobalLabel="*res://FirstGame/label.gd"
-
 [dotnet]
 
 project/assembly_name="Jogo de Apostas"

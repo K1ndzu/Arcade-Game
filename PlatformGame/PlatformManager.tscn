@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnkb42n0tq5e7"]
+
+[ext_resource type="PackedScene" uid="uid://c1rfasd4ib5uc" path="res://PlatformGame/Character/character_body_2d.tscn" id="2_ces1b"]
+
+[sub_resource type="GDScript" id="GDScript_culva"]
+
+[node name="PlatformManager" type="Node2D"]
+script = SubResource("GDScript_culva")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ces1b")]

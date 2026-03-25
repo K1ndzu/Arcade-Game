@@ -1,7 +1,7 @@
-[gd_scene format=4 uid="uid://decw3hqhjp61k"]
+[gd_scene load_steps=0 format=4 uid="uid://decw3hqhjp61k"]
 
-[ext_resource type="PackedScene" uid="uid://c1wjsp5t4hliy" path="res://character_body_2d.tscn" id="1_5cror"]
-[ext_resource type="Texture2D" uid="uid://cttfs5mf3iqfa" path="res://Imagens/Temp/tileset-1.png" id="2_xnp4e"]
+[ext_resource type="PackedScene" uid="uid://c1wjsp5t4hliy" path="res://PlatformGame/Characters/character_body_2d.tscn" id="1_5cror"]
+[ext_resource type="Texture2D" path="res://Imagens/Temp/tileset-1.png" id="2_xnp4e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88gtl"]
 texture = ExtResource("2_xnp4e")
