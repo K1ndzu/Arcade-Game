@@ -1,10 +1,35 @@
-[gd_scene load_steps=10 format=3 uid="uid://codp35fa5o5ck"]
+[gd_scene format=3 uid="uid://codp35fa5o5ck"]
 
 [ext_resource type="Script" uid="uid://eta410iaj2v5" path="res://SpaceGame/Inimigo/enemy_body.gd" id="1_inx2u"]
 [ext_resource type="Texture2D" uid="uid://dkkskjvxmxgaq" path="res://Imagens/Mini Pixel Pack 3/Enemies/Lips (16 x 16).png" id="2_s37cd"]
+[ext_resource type="Texture2D" uid="uid://dw55r5hgf8hgt" path="res://Imagens/Mini Pixel Pack 3/Effects/Explosion (16 x 16).png" id="2_tpkm0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_inx2u"]
 radius = 8.35996
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3ej0"]
+atlas = ExtResource("2_tpkm0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yexnc"]
+atlas = ExtResource("2_tpkm0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ruqb"]
+atlas = ExtResource("2_tpkm0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27yvx"]
+atlas = ExtResource("2_tpkm0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4axo"]
+atlas = ExtResource("2_tpkm0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bihba"]
+atlas = ExtResource("2_tpkm0")
+region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ulle"]
 atlas = ExtResource("2_s37cd")
@@ -30,6 +55,29 @@ region = Rect2(64, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_q3ej0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yexnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ruqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27yvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4axo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bihba")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0ulle")
 }, {
 "duration": 1.0,
@@ -49,17 +97,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EnemyBody" type="CharacterBody2D" groups=["enemy"]]
+[node name="EnemyBody" type="CharacterBody2D" unique_id=200036730 groups=["enemy"]]
 scale = Vector2(3, 3)
 script = ExtResource("1_inx2u")
 
-[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+[node name="Area2D" type="Area2D" parent="." unique_id=432700268 groups=["enemy"]]
+visible = false
+collision_layer = 4
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["enemy"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=971223835 groups=["enemy"]]
 shape = SubResource("CircleShape2D_inx2u")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=436758857]
 sprite_frames = SubResource("SpriteFrames_dl8se")
-frame_progress = 0.782776
+animation = &"Death"
+frame = 5
+frame_progress = 1.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -7,7 +7,6 @@ var bullet = preload("res://SpaceGame/Personagem/bullet.tscn")
 
 
 var speed: float = 12.5
-var score
 var state: String = "Idle"
 var direction: Vector2 = Vector2.ZERO
 
