@@ -102,7 +102,6 @@ scale = Vector2(3, 3)
 script = ExtResource("1_inx2u")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=432700268 groups=["enemy"]]
-visible = false
 collision_layer = 4
 collision_mask = 4
 
