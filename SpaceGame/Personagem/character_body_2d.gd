@@ -12,6 +12,7 @@ var direction: Vector2 = Vector2.ZERO
 
 
 func _process(delta: float) -> void:
+	SpaceGameManager.positionPlayer.emit(position.x, position.y)
 	if(Input.is_action_just_pressed("sair")):
 		get_tree().change_scene_to_file("res://CenaPrincipal/CenaPrincipal.tscn")
 	

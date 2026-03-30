@@ -3,7 +3,10 @@ extends Node2D
 var velBackGround = 27
 var lives: int = 2 
 var score : int = 000000
+var timerDifficult : Timer
 
+var time = 0.5
+@onready var spawner: Timer = $SpawnerTime
 @onready var lives_label = $CanvasLayer/LivesNumber
 @onready var score_label: Label = $CanvasLayer/ScoreLabel
 @onready var textureBackground = $Background
@@ -13,6 +16,12 @@ var Player = preload("res://SpaceGame/Personagem/character_body_2d.tscn")
 
 
 func _ready() -> void:
+	timerDifficult = Timer.new()
+	add_child(timerDifficult)
+	timerDifficult.start(30.0)
+	timerDifficult.timeout.connect(increaseDifficult)
+	
+	
 	SpaceGameManager.gainScore.connect(_on_gain_score)
 	SpaceGameManager.lives.connect(_on_gain_lives)
 
@@ -25,11 +34,15 @@ func _process(delta: float) -> void:
 		textureBackground.position.y = 0
 	
 
-
+func increaseDifficult():
+	time = max(time-0.025,0.2)
+	spawner.start(time)
+	print(spawner.time_left)
+	
 #Spawner dos inimigos
 func _on_timer_timeout() -> void:
 	var enemy = Enemy.instantiate()
-	var randomNumber = randi_range(278,854)
+	var randomNumber = randi_range(128,1024)
 	enemy.position = Vector2(randomNumber,0)
 	add_child(enemy)
 
