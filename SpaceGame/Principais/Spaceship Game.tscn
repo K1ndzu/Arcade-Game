@@ -1544,7 +1544,6 @@ position = Vector2(576, 616)
 [node name="EnemyBody" parent="." unique_id=1380435262 instance=ExtResource("6_83rb7")]
 position = Vector2(536, 24)
 disable_mode = 2
-limit = null
 
 [node name="SpawnerTime" type="Timer" parent="." unique_id=1821766572]
 wait_time = 0.5

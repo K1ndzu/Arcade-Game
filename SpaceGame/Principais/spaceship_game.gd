@@ -11,17 +11,13 @@ var time = 0.5
 @onready var score_label: Label = $CanvasLayer/ScoreLabel
 @onready var textureBackground = $Background
 @onready var over_label = $"CanvasLayer/GAME OVER"
+@onready var enemies = $EnemyBody
 var Enemy = preload("res://SpaceGame/Inimigo/enemy_body.tscn")
 var Player = preload("res://SpaceGame/Personagem/character_body_2d.tscn")
 
 
 func _ready() -> void:
-	timerDifficult = Timer.new()
-	add_child(timerDifficult)
-	timerDifficult.start(30.0)
-	timerDifficult.timeout.connect(increaseDifficult)
-	
-	
+	SpaceGameManager.timerDifficult.connect(increaseDifficult)
 	SpaceGameManager.gainScore.connect(_on_gain_score)
 	SpaceGameManager.lives.connect(_on_gain_lives)
 
@@ -37,7 +33,6 @@ func _process(delta: float) -> void:
 func increaseDifficult():
 	time = max(time-0.025,0.2)
 	spawner.start(time)
-	print(spawner.time_left)
 	
 #Spawner dos inimigos
 func _on_timer_timeout() -> void:

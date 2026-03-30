@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 signal dead
 
+var amplitude = 448
+var frequencia = 3
+var oscilação : float
+var tempo : float
+
 var lives = 1
 var type : String
 var is_dead : bool = false
@@ -12,18 +17,23 @@ var speed = 3
 @export var limit : int = 1300
 
 func _process(delta: float) -> void:
+	tempo += delta
+	
 	if(type != "Green"):
 		position.y += speed
 	else:
-		SpaceGameManager.positionPlayer.connect(playerPosition(x, y))
-	if(position.y > limit):
-		self.queue_free()
+		oscilação = sin(tempo * frequencia) * amplitude
+		global_position.x = 576 + oscilação
+		position.y += speed
+		
 		
 
 
 
 
 func _ready() -> void:
+	var opcao = [frequencia, -frequencia]
+	frequencia = opcao.pick_random()
 	var animation = randi_range(1,3)
 	match animation:
 		1:
@@ -49,9 +59,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("Bullet")):
 		lives -= 1
 		area.get_parent().queue_free()
-		SpaceGameManager.gainScore.emit(scorePoint)
 		if(lives <= 0):
+			SpaceGameManager.gainScore.emit(scorePoint)
 			self.dead.emit()
+			
 		
 		
 	

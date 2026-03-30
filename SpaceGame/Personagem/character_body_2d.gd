@@ -12,7 +12,6 @@ var direction: Vector2 = Vector2.ZERO
 
 
 func _process(delta: float) -> void:
-	SpaceGameManager.positionPlayer.emit(position.x, position.y)
 	if(Input.is_action_just_pressed("sair")):
 		get_tree().change_scene_to_file("res://CenaPrincipal/CenaPrincipal.tscn")
 	
@@ -60,7 +59,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("enemy")):
 		speed = 0
 		died = true
-		print(died)
 		updateAnimation()
 		selfArea.queue_free()
 		await animation.animation_finished
