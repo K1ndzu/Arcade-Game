@@ -11,7 +11,7 @@ var lives = 1
 var type : String
 var is_dead : bool = false
 var scorePoint = 100
-var speed = 3
+var speed = 3 + SpaceGameManager.emited*2
 @onready var areaCollision : Area2D = $Area2D
 @onready var sprite = $AnimatedSprite2D
 @export var limit : int = 1300
@@ -43,8 +43,8 @@ func _ready() -> void:
 		3:
 			type = "Green"
 	specialMove()
-	
 	dead.connect(_on_dead)
+
 
 
 func specialMove():
@@ -52,7 +52,9 @@ func specialMove():
 	if(type == "Purple"):
 		lives = 2
 	elif(type == "Yellow"):
-		speed = 7
+		speed += 3
+	elif(type == "Green"):
+		speed -= SpaceGameManager.emited
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
