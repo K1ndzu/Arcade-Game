@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://5rpc652ylqee"]
+
+[ext_resource type="Script" uid="uid://b6yx0vcmuqup4" path="res://character_body_2d.gd" id="1_8gj20"]
+[ext_resource type="Texture2D" uid="uid://chxuh6i2cbbna" path="res://Imagens/kenney_pixel-platformer-blocks/Tilemap/sand.png" id="2_wwdoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gj20"]
+size = Vector2(48, 48)
+
+[node name="Block" type="CharacterBody2D" unique_id=1613256943]
+script = ExtResource("1_8gj20")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1433336107]
+texture_filter = 1
+position = Vector2(0, 1.1920929e-06)
+scale = Vector2(2.667, 2.6666667)
+texture = ExtResource("2_wwdoi")
+hframes = 9
+vframes = 9
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1561239184]
+shape = SubResource("RectangleShape2D_8gj20")
+metadata/_edit_group_ = true
