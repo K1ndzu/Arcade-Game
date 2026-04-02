@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dey4hn2q7amms"
-path="res://.godot/imported/marble_packed.png-360e7e347e4919ecb583fd9ea68e1e61.ctex"
+uid="uid://chxuh6i2cbbna"
+path="res://.godot/imported/sand.png-c7dea1d5990a312d1bb444a970368787.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/kenney_pixel-platformer-blocks/Tilemap/marble_packed.png"
-dest_files=["res://.godot/imported/marble_packed.png-360e7e347e4919ecb583fd9ea68e1e61.ctex"]
+source_file="res://Imagens/Tilemap/sand.png"
+dest_files=["res://.godot/imported/sand.png-c7dea1d5990a312d1bb444a970368787.ctex"]
 
 [params]
 

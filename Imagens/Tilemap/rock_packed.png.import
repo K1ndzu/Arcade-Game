@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0lb8pr25u6o"
-path="res://.godot/imported/stone_packed.png-c4054c9021417576bc55b3ed596e4395.ctex"
+uid="uid://c3p8el7yv5tnl"
+path="res://.godot/imported/rock_packed.png-719874cc55ec52b0b29ae931e1a8d5bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/kenney_pixel-platformer-blocks/Tilemap/stone_packed.png"
-dest_files=["res://.godot/imported/stone_packed.png-c4054c9021417576bc55b3ed596e4395.ctex"]
+source_file="res://Imagens/Tilemap/rock_packed.png"
+dest_files=["res://.godot/imported/rock_packed.png-719874cc55ec52b0b29ae931e1a8d5bc.ctex"]
 
 [params]
 

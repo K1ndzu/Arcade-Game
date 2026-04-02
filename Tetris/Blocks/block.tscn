@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5rpc652ylqee"]
 
-[ext_resource type="Script" uid="uid://b6yx0vcmuqup4" path="res://character_body_2d.gd" id="1_8gj20"]
-[ext_resource type="Texture2D" uid="uid://chxuh6i2cbbna" path="res://Imagens/kenney_pixel-platformer-blocks/Tilemap/sand.png" id="2_wwdoi"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_8gj20"]
+[ext_resource type="Texture2D" path="res://Imagens/kenney_pixel-platformer-blocks/Tilemap/sand.png" id="2_wwdoi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gj20"]
 size = Vector2(48, 48)
