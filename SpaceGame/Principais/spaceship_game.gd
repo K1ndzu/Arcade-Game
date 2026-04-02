@@ -31,9 +31,7 @@ func _process(delta: float) -> void:
 	
 
 func increaseDifficult():
-	print(time)
 	time = max(time-0.025,0.2)
-	print(time)
 	spawner.start(time)
 	
 #Spawner dos inimigos

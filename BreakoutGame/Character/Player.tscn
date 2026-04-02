@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8ni4721wg8f2"]
+
+[ext_resource type="Script" uid="uid://c21rs60qsx8kk" path="res://BreakoutGame/Character/player.gd" id="1_yjcup"]
+[ext_resource type="Texture2D" uid="uid://b3e1dh8mviuog" path="res://Imagens/Brick_Breaker_Assets/paddles_and_balls.png" id="2_qh2xq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ua8m"]
+size = Vector2(160, 40)
+
+[node name="Player" type="CharacterBody2D" unique_id=640463976]
+script = ExtResource("1_yjcup")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1614718120]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_qh2xq")
+region_enabled = true
+region_rect = Rect2(32.5205, 7.3483963, 31.544449, 8.061359)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1702080938]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0ua8m")
