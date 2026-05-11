@@ -6,6 +6,7 @@ var score : int = 000000
 var timerDifficult : Timer
 
 var time = 0.5
+@onready var backgroundMusic = $BackgroundMusic
 @onready var spawner: Timer = $SpawnerTime
 @onready var lives_label = $CanvasLayer/LivesNumber
 @onready var score_label: Label = $CanvasLayer/ScoreLabel
@@ -17,12 +18,15 @@ var Player = preload("res://SpaceGame/Personagem/character_body_2d.tscn")
 
 
 func _ready() -> void:
+	backgroundMusic.play()
 	SpaceGameManager.timerDifficult.connect(increaseDifficult)
 	SpaceGameManager.gainScore.connect(_on_gain_score)
 	SpaceGameManager.lives.connect(_on_gain_lives)
 
 
 func _process(delta: float) -> void:
+	if(Input.is_action_just_pressed("sair")):
+		get_tree().change_scene_to_file("res://CenaPrincipal/CenaPrincipal.tscn")
 	#Movimentação do fundo
 	textureBackground.TEXTURE_REPEAT_ENABLED
 	textureBackground.position.y -= delta * velBackGround
@@ -60,6 +64,7 @@ func _on_gain_lives(increase):
 		add_child(player)
 		lives_label.text = "0" + str(lives)
 	else:
+		
 		over_label.visible = true
 	
 	

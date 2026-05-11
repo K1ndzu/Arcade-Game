@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dwa5etotd4v8b" path="res://SpaceGame/Personagem/character_body_2d.gd" id="1_2xabh"]
 [ext_resource type="Texture2D" uid="uid://oin76iattmp0" path="res://Imagens/Mini Pixel Pack 3/Effects/Sparkle (16 x 16).png" id="2_cks2f"]
 [ext_resource type="Texture2D" uid="uid://bds483tbplimd" path="res://Imagens/Mini Pixel Pack 3/Player ship/Player_ship (16 x 16).png" id="3_snma2"]
+[ext_resource type="AudioStream" uid="uid://d0vi4dmh50eej" path="res://Audio/Som de tiro 3.mp3" id="4_cks2f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wntwu"]
 radius = 6.0
@@ -92,6 +93,7 @@ collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1268734173]
 shape = SubResource("CircleShape2D_wntwu")
+disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=830786396]
 visible = false
@@ -101,5 +103,9 @@ shape = SubResource("RectangleShape2D_bwscm")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qwty2")
 animation = &"Idle"
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=1879963549]
+stream = ExtResource("4_cks2f")
+volume_db = -10.28
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

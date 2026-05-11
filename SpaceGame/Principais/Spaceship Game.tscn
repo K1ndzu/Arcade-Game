@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c37kbmdnb8vbm" path="res://Imagens/Mini Pixel Pack 3/UI objects/GAME_OVER (72 x 8).png" id="3_vi06s"]
 [ext_resource type="PackedScene" uid="uid://cxj0v1a40lqkw" path="res://SpaceGame/Personagem/character_body_2d.tscn" id="5_8oon1"]
 [ext_resource type="PackedScene" uid="uid://codp35fa5o5ck" path="res://SpaceGame/Inimigo/enemy_body.tscn" id="6_83rb7"]
+[ext_resource type="AudioStream" uid="uid://dw2ga7uh1f8s0" path="res://Audio/lucadialessandro-music-for-arcade-style-game-146875.mp3" id="8_c5qeg"]
 
 [sub_resource type="FontVariation" id="FontVariation_c5qeg"]
 
@@ -1470,6 +1471,9 @@ size = Vector2(1152, 98)
 
 [node name="SpaceshipGame" type="Node2D" unique_id=2096595237]
 script = ExtResource("1_f1ni1")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1754224224]
+stream = ExtResource("8_c5qeg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=745769156]
 
