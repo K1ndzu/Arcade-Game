@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://jmrd15r63077"]
+
+[ext_resource type="Script" uid="uid://nixd678vtff6" path="res://Menu/Leaderboard/leaderboard.gd" id="1_3xbyc"]
+[ext_resource type="FontFile" uid="uid://b68i3j70p4g83" path="res://Fonte/joystix monospace.otf" id="1_dg2n3"]
+[ext_resource type="PackedScene" uid="uid://cosr1l6xlc1g3" path="res://Menu/Leaderboard/h_box_container.tscn" id="3_v0bnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0bnv"]
+
+[node name="Leaderboard" type="Node2D" unique_id=891720268]
+script = ExtResource("1_3xbyc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1547698065]
+offset_right = 1152.0
+offset_bottom = 646.0
+color = Color(0, 0.026914695, 0.07515132, 1)
+
+[node name="HIGH SCORE" type="Label" parent="." unique_id=1774257508]
+offset_left = 384.0
+offset_top = 48.0
+offset_right = 798.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(1, 0.4117647, 0, 1)
+theme_override_fonts/font = ExtResource("1_dg2n3")
+theme_override_font_sizes/font_size = 50
+text = "high score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=106268394]
+offset_left = 336.0
+offset_top = 144.0
+offset_right = 816.0
+offset_bottom = 624.0
+
+[node name="Ranking" parent="VBoxContainer" unique_id=1501152833 instance=ExtResource("3_v0bnv")]
+layout_mode = 2
+
+[node name="Try Again" type="Button" parent="." unique_id=1794694247]
+offset_left = 816.0
+offset_top = 528.0
+offset_right = 1104.0
+offset_bottom = 590.0
+theme_override_colors/font_color = Color(0.9843127, 0, 0.36640513, 1)
+theme_override_fonts/font = ExtResource("1_dg2n3")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v0bnv")
+text = "TRY AGAIN"
+
+[connection signal="pressed" from="Try Again" to="." method="_on_try_again_pressed"]

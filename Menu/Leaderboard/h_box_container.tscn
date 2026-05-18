@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cosr1l6xlc1g3"]
+
+[node name="Ranking" type="HBoxContainer" unique_id=1501152833]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Position" type="Label" parent="." unique_id=1025186368]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="User" type="Label" parent="." unique_id=1531330520]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Score" type="Label" parent="." unique_id=729351281]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -2,48 +2,29 @@
 
 [ext_resource type="Script" uid="uid://bbccvkv8qy22j" path="res://SpaceGame/Principais/spaceship_game.gd" id="1_f1ni1"]
 [ext_resource type="Texture2D" uid="uid://b1ok5vlx47icg" path="res://Imagens/Mini Pixel Pack 3/Space_BG (2 frames) (64 x 64).png" id="2_lpc6b"]
+[ext_resource type="AudioStream" uid="uid://b0vg64k6mojmv" path="res://Audio/SoundTrack Gemini.mp3" id="2_ogrj1"]
 [ext_resource type="Texture2D" uid="uid://5pywbbu6rshf" path="res://Imagens/Mini Pixel Pack 3/UI objects/Player_life_icon (16 x 16).png" id="2_vi06s"]
 [ext_resource type="Texture2D" uid="uid://drg3fuyoi0pgb" path="res://Imagens/pixel-000000_1024x1024.webp" id="3_nedxn"]
 [ext_resource type="Texture2D" uid="uid://c37kbmdnb8vbm" path="res://Imagens/Mini Pixel Pack 3/UI objects/GAME_OVER (72 x 8).png" id="3_vi06s"]
+[ext_resource type="FontFile" uid="uid://b68i3j70p4g83" path="res://Fonte/joystix monospace.otf" id="4_ogrj1"]
 [ext_resource type="PackedScene" uid="uid://cxj0v1a40lqkw" path="res://SpaceGame/Personagem/character_body_2d.tscn" id="5_8oon1"]
 [ext_resource type="PackedScene" uid="uid://codp35fa5o5ck" path="res://SpaceGame/Inimigo/enemy_body.tscn" id="6_83rb7"]
-[ext_resource type="AudioStream" uid="uid://dw2ga7uh1f8s0" path="res://Audio/lucadialessandro-music-for-arcade-style-game-146875.mp3" id="8_c5qeg"]
 
 [sub_resource type="FontVariation" id="FontVariation_c5qeg"]
+base_font = ExtResource("4_ogrj1")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ogrj1"]
 font = SubResource("FontVariation_c5qeg")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_c5qeg"]
+font = ExtResource("4_ogrj1")
 font_size = 23
 font_color = Color(1, 0, 0, 1)
 
-[sub_resource type="FontFile" id="FontFile_cu23y"]
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/21/0/ascent = 0.0
-cache/0/21/0/descent = 0.0
-cache/0/21/0/underline_position = 0.0
-cache/0/21/0/underline_thickness = 0.0
-cache/0/21/0/scale = 1.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_vi06s"]
-font = SubResource("FontFile_cu23y")
+font = ExtResource("4_ogrj1")
 font_size = 21
-outline_size = 4
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c5qeg"]
 texture = ExtResource("3_nedxn")
@@ -1473,7 +1454,7 @@ size = Vector2(1152, 98)
 script = ExtResource("1_f1ni1")
 
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="." unique_id=1754224224]
-stream = ExtResource("8_c5qeg")
+stream = ExtResource("2_ogrj1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=745769156]
 

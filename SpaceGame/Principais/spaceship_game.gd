@@ -1,11 +1,12 @@
 extends Node2D
 
+var time = 0.5
 var velBackGround = 27
 var lives: int = 2 
 var score : int = 000000
 var timerDifficult : Timer
 
-var time = 0.5
+@onready var tryAgain = $"CanvasLayer/Try Again"
 @onready var backgroundMusic = $BackgroundMusic
 @onready var spawner: Timer = $SpawnerTime
 @onready var lives_label = $CanvasLayer/LivesNumber
@@ -17,7 +18,12 @@ var Enemy = preload("res://SpaceGame/Inimigo/enemy_body.tscn")
 var Player = preload("res://SpaceGame/Personagem/character_body_2d.tscn")
 
 
+
+
+
+
 func _ready() -> void:
+	
 	backgroundMusic.play()
 	SpaceGameManager.timerDifficult.connect(increaseDifficult)
 	SpaceGameManager.gainScore.connect(_on_gain_score)
@@ -56,6 +62,11 @@ func _on_gain_score(newScore) -> void:
 	
 	score_label.text = stringScore
 	
+	
+
+
+
+
 func _on_gain_lives(increase):
 	lives += increase
 	if(lives >= 0):
@@ -66,6 +77,8 @@ func _on_gain_lives(increase):
 	else:
 		
 		over_label.visible = true
+		await get_tree().create_timer(5.0).timeout
+		get_tree().change_scene_to_file("res://Menu/Leaderboard/leaderboard.tscn")
 	
 	
 	

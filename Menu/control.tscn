@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dbpwi6rlq3jln"]
+
+[ext_resource type="Script" uid="uid://bgb1miv6cvsb0" path="res://Menu/control.gd" id="1_10yyq"]
+[ext_resource type="VideoStream" uid="uid://bymcs8wq8a678" path="res://Menu/Ultimo-Por-favor.ogv" id="1_v8wi0"]
+[ext_resource type="FontFile" uid="uid://b68i3j70p4g83" path="res://Fonte/joystix monospace.otf" id="2_m2oks"]
+[ext_resource type="AudioStream" uid="uid://dxbetnx5vkf7l" path="res://Audio/chieuk-coin-257878.mp3" id="4_xumgl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s2ihl"]
+modulate_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" unique_id=914462683]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_10yyq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1817356988]
+top_level = true
+layout_mode = 0
+offset_left = 459.0
+offset_top = 200.0
+offset_right = 699.0
+offset_bottom = 308.0
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1346894794]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.8483135, 0.6180829, 0, 1)
+theme_override_fonts/font = ExtResource("2_m2oks")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_s2ihl")
+text = "NEW GAME"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=895761536]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_s2ihl")
+text = "LEADERBOARD"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=88317535]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=2046926213]
+layout_mode = 0
+offset_top = 43.0
+offset_right = 1200.0
+offset_bottom = 689.0
+scale = Vector2(0.96, 0.96)
+stream = ExtResource("1_v8wi0")
+autoplay = true
+loop = true
+
+[node name="StartSoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=723169918]
+stream = ExtResource("4_xumgl")
+
+[connection signal="button_up" from="VBoxContainer/Button" to="." method="_on_button_button_up"]
